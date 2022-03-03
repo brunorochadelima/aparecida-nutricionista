@@ -2,11 +2,10 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", function (event) {
   event.preventDefault();
 
+  // extrair valores do formulário
   var form = document.querySelector("#form-adiciona");
-  var nome = form.nome.value;
-  var peso = form.peso.value;
-  var altura = form.altura.value;
-  var gordura = form.gordura.value;
+  extrairValoresFormulario(form)
+
 
   var pacienteTr = document.createElement("tr");
   var nomeTd = document.createElement("td");
@@ -15,10 +14,10 @@ botaoAdicionar.addEventListener("click", function (event) {
   var gorduraTd = document.createElement("td");
   var imcTd = document.createElement("td");
 
-  nomeTd.textContent = nome;
+  nomeTd.textContent = nome.value;
   pesoTd.textContent = peso;
   alturaTd.textContent = altura;
-  gorduraTd.textContent = gordura;
+  gorduraTd.textContent = gordura.value;
   imcTd.textContent = calculaImc(peso, altura);
 
   pacienteTr.appendChild(nomeTd);
@@ -30,3 +29,17 @@ botaoAdicionar.addEventListener("click", function (event) {
   tabelaPacientes = document.querySelector("#tabela-pacientes");
   tabelaPacientes.appendChild(pacienteTr);
 });
+
+
+function extrairValoresFormulario(form) {
+
+  var paciente = {
+    nome: form.nome.value,
+    peso: form.peso.value,
+    altura: form.altura.value,
+    gordura: form.gordura.value, //colocar virgula no final de cada propriedade do objeto, exceto no último
+    imc: calculaImc(form.peso.value, form.altura.value)
+  }
+
+  console.log(paciente);
+}
