@@ -37,7 +37,7 @@ for (var index = 0; index < pacientes.length; index++) {
 }
 
 function calculaImc(peso, altura) {
-var imc = 0;
-imc = peso / (altura * altura)
-return imc.toFixed(2)
+  var imc = 0;
+  imc = peso / (altura * altura);
+  return imc.toFixed(2);
 }
