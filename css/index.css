@@ -133,6 +133,6 @@ button[disabled=disabled], button:disabled {
 	border: 1px solid red;
 }
 
-.dado-invalido{
+.dado-invalido, #mensagens-erro li {
 	color: coral;
 }
