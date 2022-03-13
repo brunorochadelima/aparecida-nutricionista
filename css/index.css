@@ -136,3 +136,8 @@ button[disabled=disabled], button:disabled {
 .dado-invalido, #mensagens-erro li {
 	color: coral;
 }
+
+.fadeout {
+	opacity: 0;
+	transition: .5s;
+}
