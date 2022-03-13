@@ -1,10 +1,13 @@
-var pacientes = document.querySelectorAll(".paciente")
+var tabela = document.querySelector("#tabela-pacientes")
 
-pacientes.forEach(function(item){
-  item.addEventListener("dblclick", function(){
-    this.remove()
-  })
+tabela.addEventListener("dblclick", function(event) {
+event.target.parentNode.classList.add("fadeout") 
+
+setTimeout(function() {
+  event.target.parentNode.remove() //remover o pai(parentNode) do elemento alvo do click(target)
+},500)
 })
+
 
 
 
