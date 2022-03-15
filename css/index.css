@@ -1,143 +1,187 @@
-*{
-	box-sizing: border-box;
- }
-
-body{
-	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+* {
+  box-sizing: border-box;
 }
 
-header{
-	background-color: #333;
-	height: 3em;
-	color: #FFF;
-	margin-bottom: 1em;
+body {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #ecf0f1;
+  font-family: "Lato", sans-serif;
 }
 
-header h1{
-	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
-}
-header h2{
-	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
+header {
+  background-color: rgba(100, 77, 237, 0.08);
+  height: 5em;
+  color: #484964;
+  margin-bottom: 1.5em;
+  font-weight: bold;
 }
 
-header .container:before{
-	content: '';
-	display:inline-block;
-	height: 100%;
-	vertical-align:	middle;
+header h1 {
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+}
+header h2 {
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.container{
-	width: 60%;
-	height: 100%;
-	margin: 0 auto;
+main h2 {
+  color: #484964;
+  font-weight: bold;
+  font-size: 2rem !important;
 }
 
-section{
-	margin: 2em 0;
-	overflow: hidden;
+header .container:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
-section h2{
-	font-size: 3em;
-	display: block;
-	padding-bottom: .5em;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: .5em;
+.container {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
 }
 
-table{
-	width: 100%;
-	margin-bottom : .5em;
-    table-layout: fixed;
-
+section {
+  margin: 2em 0;
+  overflow: hidden;
 }
 
-td, th {
-	padding: .7em;
-	margin: 0;
-	border: 1px solid #ccc;
-	text-align: center;
+section h2 {
+  font-size: 3em;
+  display: block;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5em;
 }
 
-th{
-	font-weight: bold;
-	background-color: #EEE;
+table {
+  width: 100%;
+  margin-bottom: 0.5em;
+  table-layout: fixed;
 }
 
-label{
-	color: #555;
-	display: block;
-	margin-bottom: .2em;
+/* linhas pares (even) */
+#tabela-pacientes tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
-.campo{
-	margin: 0;
-	padding-bottom: 1em;
-	width: 100%;
-	border: 1px solid #ccc;
-	padding: .7em;
-	width: 100%;
+/* linhas ímpares (odd) */
+#tabela-pacientes tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
-.campo-medio{
-	display: inline-block;
-	padding-right: .5em;
+td,
+th {
+  padding: 0.7em;
+  margin: 0;
+  border: 1px solid #eeeef2;
+  text-align: center;
+  color: #484964;
 }
 
-.grupo{
-	width: 32%;
-	display: inline-block;
-	padding: 10px 0px;
+th {
+  font-weight: bold;
+  background-color: rgba(100, 77, 237, 0.08);
 }
 
-button{
-	padding: .5em 2em;
-	border: 0;
-	border-bottom: 3px solid;
-	font-size: 1.2em;
-	cursor: pointer;
-	margin: 0;
-	margin-top: -3px;
-	color: #fff;
-	background-color:#0c8cd3;
-	border-color: #04324c;
-	width: 20%;
-    display: block;
-    clear: both;
-    margin: 10px 0px;
-
+label {
+  color: #555;
+  display: block;
+  margin-bottom: 0.2em;
 }
 
-button:active{
-	margin-top:0px;
-	border: 0;
+.campo {
+  margin: 0;
+  padding-bottom: 1em;
+  width: 100%;
+  border: 1px solid #eeeef2;
+  padding: 0.7em;
+  width: 100%;
 }
 
-button[disabled=disabled], button:disabled {
-    background-color: gray;
-	border-color: darkgray;
-
+.campo-medio {
+  display: inline-block;
+  padding-right: 0.5em;
 }
 
-.adicionar-paciente{
-    margin-top: 30px;
+.grupo {
+  width: 32%;
+  display: inline-block;
+  padding: 10px 0px;
 }
 
-.campo-invalido{
-	border: 1px solid red;
+/* altera cor dos campos preenchidos*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }
 
-.dado-invalido, #mensagens-erro li {
-	color: coral;
+#form-adiciona input {
+  border-radius: 5px;
+  padding: 0.8rem;
+}
+
+button {
+  padding: 0.8em 0.8em;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 0;
+  margin-top: -3px;
+  color: #fff;
+  background-color: #8960ff;
+  width: 20%;
+  display: block;
+  clear: both;
+  margin: 10px 0px;
+}
+
+button:active {
+  margin-top: 0px;
+  border: 0;
+}
+
+button[disabled="disabled"],
+button:disabled {
+  background-color: gray;
+  border-color: darkgray;
+}
+
+.adicionar-paciente {
+  margin-top: 30px;
+}
+
+.campo-invalido {
+  border: 1px solid red;
+}
+
+.dado-invalido,
+#mensagens-erro li {
+  color: coral;
 }
 
 .fadeout {
-	opacity: 0;
-	transition: .5s;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .grupo {
+    width: 100%;
+    display: block;
+  }
 }
