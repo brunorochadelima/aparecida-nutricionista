@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.logo {
+  padding: 1rem 0;
+  width: 200px;
+}
+
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -11,7 +16,6 @@ body {
 
 header {
   background-color: rgba(100, 77, 237, 0.08);
-  height: 5em;
   color: #484964;
   margin-bottom: 1.5em;
   font-weight: bold;
@@ -121,7 +125,12 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
 
-#form-adiciona input {
+#buscar_paciente {
+  margin-bottom: 1rem;
+  border: none;
+}
+
+#form-adiciona input, #buscar_paciente{
   border-radius: 5px;
   padding: 0.8rem;
 }
@@ -169,6 +178,10 @@ button:disabled {
 .fadeout {
   opacity: 0;
   transition: 0.5s;
+}
+
+.invisivel {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
