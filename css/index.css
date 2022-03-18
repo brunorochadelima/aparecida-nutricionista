@@ -3,8 +3,8 @@
 }
 
 .logo {
-  padding: 1rem 0;
-  width: 200px;
+  padding: .5rem 0;
+  width: 250px;
 }
 
 body {
@@ -19,6 +19,7 @@ header {
   color: #484964;
   margin-bottom: 1.5em;
   font-weight: bold;
+  text-align: center;
 }
 
 header h1 {
@@ -193,7 +194,7 @@ button:disabled {
     width: 100%;
   }
 
-  .grupo {
+  .grupo, #buscar_paciente {
     width: 100%;
     display: block;
   }
