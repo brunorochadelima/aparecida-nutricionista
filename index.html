@@ -15,12 +15,14 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="titulo">Aparecida Nutrição</h1>
+        <img class="logo" src="./logo-aparecida.png">
       </div>
     </header>
     <main>
       <section class="container">
         <h2>Meus pacientes</h2>
+        <label for="buscar_paciente">Filtrar Paciente:</label>
+        <input type="search" id="buscar_paciente" placeholder="Nome do paciente">
         <table>
           <thead>
             <tr>
@@ -128,5 +130,6 @@
     <script src="./js/calcula-imc.js"></script>
     <script src="./js/form.js"></script>
     <script src="./js/remover-paciente.js"></script>
+    <script src="./js/filtrar-paciente.js"></script>
   </body>
 </html>
