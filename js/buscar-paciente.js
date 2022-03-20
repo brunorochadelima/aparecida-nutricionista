@@ -2,7 +2,7 @@ var botaoAdicionar = document.querySelector("#buscar-paciente");
 botaoAdicionar.addEventListener("click", function () {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
-  xhr.send();
+  
   xhr.addEventListener("load", function () {
     var erroAjax = document.querySelector("#erro-ajax")
 
@@ -17,6 +17,7 @@ botaoAdicionar.addEventListener("click", function () {
     } else {
       erroAjax.classList.remove("invisivel")
     }
-
   });
+  
+  xhr.send();
 });
