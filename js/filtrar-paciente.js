@@ -25,3 +25,5 @@ buscarPaciente.addEventListener("input", function () {
 for (var i = 0; i < pacientes.length; i++) {
   var paciente = pacientes[i];
 }
+
+
