@@ -10,22 +10,27 @@ botaoAdicionar.addEventListener("click", function (event) {
   var pacienteTr = montaTr(paciente);
 
   //Validar dados do pacientes
-  var erros = validaDados(paciente)
+  var erros = validaDados(paciente);
   if (dadosInvalidos.length > 0) {
-    exibirMensagenErro(erros)
+    exibirMensagenErro(erros);
     return;
   }
-  
-  // Colocar TR paciente como filho da tabela
-  var tabela = document.querySelector("#tabela-pacientes");
-  tabela.appendChild(pacienteTr);
+
+  adicionaPacienteNaTabela(paciente)
 
   form.reset();
 
   //limpar erros após dados inseridos com sucesso
   var mensagensErro = document.querySelector("#mensagens-erro");
-  mensagensErro.innerHTML = ""
+  mensagensErro.innerHTML = "";
 });
+
+function adicionaPacienteNaTabela(paciente) {
+  var pacienteTr = montaTr(paciente);
+  // Colocar TR paciente como filho da tabela
+  var tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(pacienteTr);
+}
 
 function extrairValoresFormulario(form) {
   var paciente = {
@@ -59,39 +64,38 @@ function montaTd(dado, classe) {
 }
 
 function validaDados(paciente) {
-  dadosInvalidos = []
+  dadosInvalidos = [];
 
   if (!validaPeso(paciente.peso)) {
-    dadosInvalidos.push("Peso inválido")
-  } 
+    dadosInvalidos.push("Peso inválido");
+  }
 
   if (!validaAltura(paciente.altura)) {
-    dadosInvalidos.push("Altura inválida")
-  } 
+    dadosInvalidos.push("Altura inválida");
+  }
 
   if (paciente.nome.length == 0) {
-    dadosInvalidos.push("O nome não pode ficar em branco")
+    dadosInvalidos.push("O nome não pode ficar em branco");
   }
 
   if (paciente.peso.length == 0) {
-    dadosInvalidos.push("O peso não pode ficar em branco")
+    dadosInvalidos.push("O peso não pode ficar em branco");
   }
 
   if (paciente.altura.length == 0) {
-    dadosInvalidos.push("A altura não pode ficar em branco")
+    dadosInvalidos.push("A altura não pode ficar em branco");
   }
 
   return dadosInvalidos;
 }
 
-
-function exibirMensagenErro(erros){
+function exibirMensagenErro(erros) {
   var ul = document.querySelector("#mensagens-erro");
-  ul.innerHTML = ""
+  ul.innerHTML = "";
 
-  dadosInvalidos.forEach(function(erro) {
-    var li = document.createElement("li")
-    li.textContent = erro
-    ul.appendChild(li)
+  dadosInvalidos.forEach(function (erro) {
+    var li = document.createElement("li");
+    li.textContent = erro;
+    ul.appendChild(li);
   });
 }
