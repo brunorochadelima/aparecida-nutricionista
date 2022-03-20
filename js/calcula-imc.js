@@ -56,3 +56,4 @@ function validaAltura(altura) {
     return false;
   }
 }
+
